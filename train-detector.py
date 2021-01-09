@@ -76,7 +76,7 @@ if __name__ == '__main__':
 	opt = getattr(keras.optimizers,args.optimizer)(lr=args.learning_rate)
 	model.compile(loss=loss, optimizer=opt)
 
-	print 'Checking input directory...'
+	print('Checking input directory...')
 	Files = image_files_from_folder(train_dir)
 
 	Data = []
@@ -87,7 +87,7 @@ if __name__ == '__main__':
 			I = cv2.imread(file)
 			Data.append([I,L[0]])
 
-	print '%d images with labels found' % len(Data)
+	print('%d images with labels found' % len(Data))
 
 	dg = DataGenerator(	data=Data, \
 						process_data_item_func=lambda x: process_data_item(x,dim,model_stride),\
